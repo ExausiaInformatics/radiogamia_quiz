@@ -1,3 +1,7 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
 .questions {
     background-color: $off-white;
     border-left: 5px solid $blue;
@@ -39,12 +43,13 @@
 
     .options-container {
         display: inline-block;
-        width: 50%;
+        width: 40%;
+        display: block;
+        margin-left: 60%;
     }
 
     .option {
-        background-color: $blue;
-        border-radius: $button-radius;
+        border:1px solid white;
         color: $white;
         cursor: pointer;
         margin: $md auto;
@@ -55,7 +60,8 @@
     }
 
     .option:hover {
-        background-color: darken($blue, 20%);
+        border:1px solid darken($blue, 20%);
+        color:darken($blue, 20%);
     }
 }
 
@@ -83,7 +89,7 @@
 }
 
 .button-container button:first-child:hover {
-    background-color: darken($blue, 20%);
+    border: darken($blue, 20%);
 }
 
 .button-container button:nth-child(2) {
@@ -104,4 +110,11 @@
 
 .button-container button:last-child:hover {
     background-color: darken($red, 10%);
+}
+.title-web{
+    font-family: 'Pacifico', cursive;
+    color: white;
+}
+.text{
+    color: white;
 }

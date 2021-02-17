@@ -21,14 +21,14 @@ const Home = () => (
                         <li><Link className="play-button mx-auto" to="/play/instructions">Skip</Link></li>
                     </ul>
                 </div>
-                <div className="row mar-contact">
+                {/* <div className="row mar-contact">
                     <div className="col-6">
                         <a href="#" className="float-right aboutus">About Us</a>
                     </div>
                     <div className="col-6">
                         <a href="#" className="aboutus">Contact</a>
                     </div>
-                </div>
+                </div> */}
             </section>
         </div>
     </Fragment>

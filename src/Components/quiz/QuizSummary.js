@@ -106,7 +106,7 @@ class QuizSummary extends Component {
         return (
             <Fragment>
                 <Helmet><title>Quiz App - Summary</title></Helmet>
-                <div className="quiz-summary">
+                <div className="quiz-summary" style={{background:'black'}}>
                     {stats}
                 </div>
             </Fragment>

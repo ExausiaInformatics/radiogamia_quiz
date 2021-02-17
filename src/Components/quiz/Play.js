@@ -352,8 +352,8 @@ class Play extends Component {
                     <audio ref={this.wrongSound} src={wrongNotification}></audio>
                     <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
-                <div className="questions">
-                    <h2>Quiz Mode</h2>
+                <div className="questions bg-dark">
+                    <h2 className="title-web">Radiogamia</h2>
                     <div className="lifeline-container">
                         <p>
                             <span onClick={this.handleFiftyFifty} className="mdi mdi-set-center mdi-24px lifeline-icon">
@@ -366,9 +366,9 @@ class Play extends Component {
                             </span>
                         </p>
                     </div>
-                    <div className="timer-container">
+                    <div className="timer-container text">
                         <p>
-                            <span className="left" style={{ float: 'left' }}>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
+                            <span className="left text" style={{ float: 'left'}}>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
                             <span className={classnames('right valid', {
                                 'warning': time.distance <= 120000,
                                 'invalid': time.distance < 30000
@@ -377,7 +377,7 @@ class Play extends Component {
                             <span  className="mdi mdi-clock-outline mdi-24px"></span></span>
                         </p>
                     </div>
-                    <h5>{currentQuestion.question}</h5>
+                    <h5 className="text">{currentQuestion.question}</h5>
                     <div className="options-container">
                         <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
                         <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
