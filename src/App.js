@@ -9,7 +9,7 @@ import QuizSummary from './Components/quiz/QuizSummary';
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Home} />
+      <Route path="/radiogamia_quiz" exact component={Home} />
       <Route path="/play/instructions" exact component={QuizInstructions} />
       <Route path="/play/quiz" exact component={Play} />
       <Route path="/play/quizSummary" exact component={QuizSummary} />
