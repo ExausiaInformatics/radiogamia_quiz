@@ -48,7 +48,7 @@ const QuizInstructions = () => (
                 <li>Let's do this if you think you've got what it takes?</li>
             </ul>
             <div>
-                <span className="left"><Link to="/">No take me back</Link></span>
+                <span className="left"><Link to="/radiogamia_quiz">No take me back</Link></span>
                 <span className="right"><Link to="/play/quiz">Okay, Let's do this!</Link></span>
             </div>
         </div>
