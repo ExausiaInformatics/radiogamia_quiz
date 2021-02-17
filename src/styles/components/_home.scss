@@ -1,5 +1,5 @@
 #home {
-    background-image: url('../../assets/img/background.jpg');
+    background-color: black;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -12,13 +12,14 @@
         border-radius: 5px;
         padding-left: $md;
         padding-right: $md;
-        height: 80%;
-        width: 35%;
+        height: 100%;
+        width: 100%;
     }
 
     .cube {
-        font-size: 8rem;
-        color: $orange;
+        font-size: 6rem;
+        color: $off-white;
+        font-family: 'Pacifico', cursive;
     }
 
     h1 {
@@ -27,13 +28,16 @@
         text-align: center;
         color: $off-white;
     }
-
+    .play-button{
+        text-decoration: none;
+        font-size: larger;
+        width: 25%;
+    }
     .play-button-container {
         width: 100%;
     }
 
     a.play-button {
-        background-color: $green;
         border-radius: $button-radius;
         color: #fff;
         display: block;
@@ -44,7 +48,7 @@
     }
 
     a.play-button:hover {
-        background-color: darken($green, 10%);
+        color: darken($green, 10%);
         box-shadow: $shadow;
     }
 
@@ -52,22 +56,23 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-top: $lg;
     }
 
     #login-button {
-        background-color: $red;
+        text-decoration: none;
+        font-size: larger;
     }
     #login-button:hover {
-        background-color: darken($red, 10%);
+        color: darken($red, 10%);
         box-shadow: $shadow;
     }
-    
-    #signup-button {
-        background-color: $blue;
+    #signup-button{
+        text-decoration: none;
+        font-size: larger;
     }
+    
     #signup-button:hover {
-        background-color: darken($blue, 10%);
+        color: darken($blue, 10%);
         box-shadow: $shadow;
     }
 
@@ -78,8 +83,16 @@
         padding: $normal 0;
         text-align: center;
         transition: 0.3s linear all;
-        width: 45%;
+        width: 25%;
     }
+}
+.mar-contact{
+    margin-top: 18%;
+}
+
+.aboutus{
+    text-decoration: none !important;
+    font-size: larger;
 }
 
 @media (max-width: 768px) {
