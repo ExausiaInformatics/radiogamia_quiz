@@ -446,7 +446,7 @@ class Play extends Component {
                                 <Image src={currentQuestion.image} width={currentQuestion.width} className="mt-2" />
 
                             </Col>
-                            <Col md={5} className="offset-1 d-xs-block d-sm-none d-md-block" style={{position:'fixed', left:'725px'}}>
+                            <Col md={5} className="offset-1 d-xs-block d-sm-none d-md-block" style={{position:'fixed', left:'655px'}}>
                                 <div className="options-container">
                                     <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
                                     <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
