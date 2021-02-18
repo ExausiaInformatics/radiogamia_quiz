@@ -2,10 +2,12 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import answer from '../../assets/img/answer.png';
+import answer from '../../assets/img/answers.png';
 import fiftyFifty from '../../assets/img/fiftyFifty.PNG';
 import hints from '../../assets/img/hints.PNG';
 import options from '../../assets/img/options.PNG';
+import zoom from '../../assets/img/zoom.png';
+import compare from '../../assets/img/compare.png';
 import { Container } from 'react-bootstrap';
 
 const QuizInstructions = () => (
@@ -49,12 +51,12 @@ const QuizInstructions = () => (
                        Use ZoomIn feature by clicking the icon &nbsp;
                        <span className="mdi mdi-magnify mdi-24px lifeline-icon"></span> and then
                        move the cursor over the Image to Zoom.
-                        <img src={hints} alt="Quiz App hints example" />
+                        <img src={zoom} alt="Quiz App hints example" />
                     </li>
                     <li>
                        You can compare two images by clicking the icon &nbsp;
                        <span className="mdi mdi-compare mdi-24px lifeline-icon"></span>
-                        <img src={hints} alt="Quiz App hints example" />
+                        <img src={compare} alt="Quiz App hints example" />
                     </li>
                     <li>Feel free to quit (or retire from) the game at any time. In that case your score will be revealed afterwards.</li>
                     <li>The timer starts as soon as the quiz loads.</li>

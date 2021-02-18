@@ -1,158 +1,208 @@
-import First from './assets/img/answer.png';
-import Second from './assets/img/fiftyFifty.PNG';
-import Third from './assets/img/hints.PNG';
-import Fourth from './assets/img/options.PNG';
+import First from './assets/img/Picture1.jpg';
+import FirstA from './assets/img/Picture1a.jpg';
+import Second from './assets/img/Picture2.jpg';
+import Third from './assets/img/Picture3.jpg';
+import ThirdA from './assets/img/Picture3a.jpg';
+import Fourth from './assets/img/Picture4.jpg';
+import FourthA from './assets/img/Picture4a.jpg';
+import Fifth from './assets/img/Picture5.jpg';
+import FifthA from './assets/img/Picture5a.jpg';
 
 
 
 export const questions = [
     {
-        "question": "What temperature does water boil at?",
-        "optionA": "50 degrees Celcius",
-        "optionB": "25 degrees Celcius",
-        "optionC": "100 degrees Celcius",
-        "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius",
-        "image": First
+        "question": "Identify the pathology shown in the chest x-ray?",
+        "optionA": "Pleural effusion",
+        "optionB": "Pneumothorax",
+        "optionC": "Chest trauma",
+        "optionD": "Pneumonia",
+        "answer": "Pleural effusion",
+        "image": First,
+        "normalImage": FirstA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
-        "optionA": "Wole Soyinka",
-        "optionB": "William Shakespeare",
-        "optionC": "Ngozi Chimamanda Adichie",
-        "optionD": "Dan Brown",
-        "answer": "William Shakespeare",
-        "image": Second
+        "question": "Which term best describes the appearance of this radiograph?",
+        "optionA": "patchy consolidation",
+        "optionB": "bibasal atelectasis",
+        "optionC": "blunting of costophrenic angle",
+        "optionD": "reticular infiltrates",
+        "answer": "blunting of costophrenic angle",
+        "image": First,
+        "normalImage": FirstA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What did the crocodile swallow in Peter Pan?",
-        "optionA": "A Book",
-        "optionB": "A Computer",
-        "optionC": "A pair of shoes",
-        "optionD": "Alarm Clock",
-        "answer": "Alarm Clock",
-        "image": Third
+        "question": "Which criteria is used to differentiate between types of pleural effusion?",
+        "optionA": "Moore’s criteria",
+        "optionB": "Light’s criteria",
+        "optionC": "Koch principle",
+        "optionD": "Occam’s law",
+        "answer": "Light’s criteria",
+        "image": First,
+        "normalImage": FirstA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "Which is the only mammal that can’t jump?",
-        "optionA": "Dog",
-        "optionB": "Elephant",
-        "optionC": "Goat",
-        "optionD": "Lion",
-        "answer": "Elephant",
-        "image": Fourth
+        "question": "Which pathology is seen in the radiograph?",
+        "optionA": "Pneumothorax",
+        "optionB": "Pneumonia",
+        "optionC": "Pneumoperitoneum",
+        "optionD": "Pleural effusion",
+        "answer": "Pneumoperitoneum",
+        "image": Second,
+        "normalImage":FirstA,
+        "width": '40%',
+        "widthA": '50%'
     },
 
     {
-        "question": "Who lived at 221B, Baker Street, London?",
-        "optionA": "Tony Stark",
+        "question": "The presence of which of the following leads to this appearance?",
+        "optionA": "Free air",
         "optionB": "Morgan Freeman",
         "optionC": "Sherlock Holmes",
         "optionD": "Samuel L. Jackson",
-        "answer": "Sherlock Holmes",
-        "image": First
+        "answer": "Free air",
+        "image": Second,
+        "normalImage":FirstA,
+        "width": '40%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What colour is a panda?",
-        "optionA": "Green and Yellow",
-        "optionB": "Blue and Red",
-        "optionC": "Green and White",
-        "optionD": "Black and White",
-        "answer": "Black and White",
-        "image": Second
+        "question": "Which syndrome mimics the appearance of pneumoperitoneum?",
+        "optionA": "Surgical emphysema",
+        "optionB": "Pulmonary fibrosis",
+        "optionC": "Lung carcinoid",
+        "optionD": "Chilaiditi syndrome",
+        "answer": "Chilaiditi syndrome",
+        "image": Second,
+        "normalImage":FirstA,
+        "width": '40%',
+        "widthA": '50%'
     },
 
     {
-        "question": "Where is the smallest bone in the human body?",
-        "optionA": "The Chest",
-        "optionB": "The Ear",
-        "optionC": "The Legs",
-        "optionD": "The Hands",
-        "answer": "The Ear",
-        "image": Third
+        "question": "Which treatment option is best suited to manage this pathology?",
+        "optionA": "Conservative management",
+        "optionB": "Closed reduction",
+        "optionC": "Open reduction",
+        "optionD": "Open reduction with internal fixation",
+        "answer": "Open reduction with internal fixation",
+        "image": Third,
+        "normalImage": ThirdA,
+        "width": '20%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What does the roman numeral C represent?",
-        "optionA": "100",
-        "optionB": "10",
-        "optionC": "10,000",
-        "optionD": "1,000,000",
-        "answer": "100",
-        "image": Fourth
+        "question": "Which ankle series view is seen in the image above?",
+        "optionA": "AP view",
+        "optionB": "Lateral view",
+        "optionC": "Mortise view",
+        "optionD": "PA view",
+        "answer": "AP view",
+        "image": Third,
+        "normalImage": ThirdA,
+        "width": '20%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What takes place in Hong Kong's Happy Valley?",
-        "optionA": "Chicken Wrestling",
-        "optionB": "Horse racing",
-        "optionC": "Street Racing",
-        "optionD": "Arm Wrestling",
-        "answer": "Horse racing",
-        "image": First
+        "question": "What type of fracture is seen in the radiograph?",
+        "optionA": "Unimalleolar",
+        "optionB": "Bimalleolar",
+        "optionC": "Trimalleolar",
+        "optionD": "No fracture visible",
+        "answer": "Bimalleolar",
+        "image": Third,
+        "normalImage": ThirdA,
+        "width": '20%',
+        "widthA": '50%'
     },
 
     {
-        "question": "Who painted the Mona Lisa?",
-        "optionA": "Alexander Graham Bell",
-        "optionB": "Sir Isaac Newton",
-        "optionC": "Leonardo Da Vinci",
-        "optionD": "Albert Einstein",
-        "answer": "Leonardo Da Vinci",
-        "image": Second
+        "question": "Which iatrogenic modality is seen in this radiograph?",
+        "optionA": "Cannulated hip screw",
+        "optionB": "Total hip replacement",
+        "optionC": "Dynamic hip screw",
+        "optionD": "Hemiarthroplasty",
+        "answer": "Hemiarthroplasty",
+        "image": Fourth,
+        "normalImage": FourthA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What’s the most important book in the Moslem religion?",
-        "optionA": "The Koran",
-        "optionB": "The Dictionary",
-        "optionC": "The Bible",
-        "optionD": "The Chemistry text Book",
-        "answer": "The Koran",
-        "image": Third
+        "question": "Which of the fractures is repaired by hemiarthroplsty?",
+        "optionA": "Intracapsular",
+        "optionB": "Subtronchanteric",
+        "optionC": "Extracapsular",
+        "optionD": "Intertubercular",
+        "answer": "Intracapsular",
+        "image": Fourth,
+        "normalImage": FourthA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What’s the capital of Ethiopia?",
-        "optionA": "Cape Town",
-        "optionB": "San Francisco",
-        "optionC": "Abuja",
-        "optionD": "Syndey",
-        "answer": "Addis Ababa",
-        "image": Fourth
+        "question": "Which of the following is not a complication of hemiarthroplasty?",
+        "optionA": "Peri-prosthetic fracture",
+        "optionB": "Acetabular wear",
+        "optionC": "Femoral shaft fracture",
+        "optionD": "Avascular necrosis",
+        "answer": "Avascular necrosis",
+        "image": Fourth,
+        "normalImage": FourthA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "How many squares are there on a chess board?",
-        "optionA": "128",
-        "optionB": "64",
-        "optionC": "32",
-        "optionD": "256",
-        "answer": "64",
-        "image": First
+        "question": "Which pathology is seen in the radiograph?",
+        "optionA": "Radial head dislocation",
+        "optionB": "Olecranon fracture",
+        "optionC": "Ulnar dislocation",
+        "optionD": "Humeral fracture",
+        "answer": "Radial head dislocation",
+        "image": Fifth,
+        "normalImage": FifthA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "Who invented the electric light bulb?",
-        "optionA": "Tom Cruise",
-        "optionB": "Barack Obama",
-        "optionC": "Wole Soyinka",
-        "optionD": "Thomas Edison",
-        "answer": "Thomas Edison",
-        "image": Second
+        "question": "Which of the following is not a ossification centre?",
+        "optionA": "Capitellum",
+        "optionB": "Styloid process",
+        "optionC": "Trochlear",
+        "optionD": "Olecranon",
+        "answer": "Styloid process",
+        "image": Fifth,
+        "normalImage": FifthA,
+        "width": '50%',
+        "widthA": '50%'
     },
 
     {
-        "question": "What are the first three words of the bible?",
-        "optionA": "be with everyone",
-        "optionB": "Again Jesus asked",
-        "optionC": "In the beginning",
-        "optionD": "At that time",
-        "answer": "In the beginning",
-        "image": Third
+        "question": "Which of the following is mostly a pathological finding in elbow x-ray?",
+        "optionA": "Anterior fat pad",
+        "optionB": "Posterior fat pad",
+        "optionC": "Figure of eight",
+        "optionD": "Loss of ossification centre",
+        "answer": "Posterior fat pad",
+        "image": Fifth,
+        "normalImage": FifthA,
+        "width": '50%',
+        "widthA": '50%'
     }
 ]

@@ -442,11 +442,11 @@ class Play extends Component {
                         <br /><br />
                         <h5 className="text">{currentQuestion.question}</h5>
                         <Row>
-                            <Col xs={6} className={this.state.zoom ? 'zoom' : 'boom'}>
-                                <Image src={currentQuestion.image} width="100%" className="mt-2" />
+                            <Col md={6} className={this.state.zoom ? 'zoom' : 'boom'}>
+                                <Image src={currentQuestion.image} width={currentQuestion.width} className="mt-2" />
 
                             </Col>
-                            <Col xs={5} className="offset-1">
+                            <Col md={5} className="offset-1 d-xs-block d-sm-none d-md-block" style={{position:'fixed', left:'725px'}}>
                                 <div className="options-container">
                                     <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
                                     <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
@@ -456,9 +456,34 @@ class Play extends Component {
                                     <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
                                 </div>
                             </Col>
+                            <Col className="d-none d-sm-block d-md-none">
+                                <Row>
+                                    <Col xs={6}><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p></Col>
+                                    <Col xs={6}><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p></Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={6}><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p></Col>
+                                    <Col xs={6}><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p></Col>
+                                </Row>
+                            </Col>
                         </Row>
-                        <div className="button-container">
+                        <div className="button-container d-none d-sm-block mb-sm-5">
                             <button
+                                className={classnames('', { 'disable': this.state.previousButtonDisabled })}
+                                id="previous-button"
+                                onClick={this.handleButtonClick}>
+                                Previous
+                        </button>
+                            <button
+                                className={classnames('', { 'disable': this.state.nextButtonDisabled })}
+                                id="next-button"
+                                onClick={this.handleButtonClick}>
+                                Next
+                            </button>
+                            <button id="quit-button" onClick={this.handleButtonClick}>Quit</button>
+                        </div>
+                        <div className="d-sm-none button-container" style={{justifyContent: 'none', width: '100%', margin: '0'}}>
+                        <button
                                 className={classnames('', { 'disable': this.state.previousButtonDisabled })}
                                 id="previous-button"
                                 onClick={this.handleButtonClick}>
@@ -498,7 +523,7 @@ class Play extends Component {
                                             </Row>
                                             <Row>
                                                 <Col xs={12}>
-                                                    <Image src={currentQuestion.image} width='100%' />
+                                                    <Image src={currentQuestion.normalImage} width={currentQuestion.widthA} />
                                                 </Col>
                                             </Row>
                                         </Col>
@@ -510,7 +535,7 @@ class Play extends Component {
                                             </Row>
                                             <Row>
                                                 <Col xs={12}>
-                                                    <Image src={currentQuestion.image} width='100%' />
+                                                    <Image src={currentQuestion.image} width={currentQuestion.width} />
                                                 </Col>
                                             </Row>
                                         </Col>
