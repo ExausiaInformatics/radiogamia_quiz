@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import M from 'materialize-css';
 import classnames from 'classnames';
-
-import questions from '../../questions.json';
+import { Row, Col, Image, Container, Modal, Button } from 'react-bootstrap'
+// import questions from '../../questions.json';
+import { questions } from '../../questions.js';
 import isEmpty from '../../utils/is-empty';
 
 import correctNotification from '../../assets/audio/correct-answer.mp3';
@@ -11,7 +12,7 @@ import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonSound from '../../assets/audio/button-sound.mp3';
 
 class Play extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             questions,
@@ -31,7 +32,9 @@ class Play extends Component {
             nextButtonDisabled: false,
             previousButtonDisabled: true,
             previousRandomNumbers: [],
-            time: {}
+            time: {},
+            zoom: false,
+            setShow: false
         };
         this.interval = null;
         this.correctSound = React.createRef();
@@ -39,18 +42,68 @@ class Play extends Component {
         this.buttonSound = React.createRef();
     }
 
-    componentDidMount () {
+    componentDidMount() {
         const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
         this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);
         this.startTimer();
     }
 
-    componentWillUnmount () {
+    componentWillUnmount() {
         clearInterval(this.interval);
     }
 
+    handleZoom = () => {
+        if (!this.state.zoom) {
+            this.setState({
+                zoom: true
+            })
+        }
+        else if (this.state.zoom) {
+            this.setState({
+                zoom: false
+            })
+        }
+    }
+
+    handleSetShow = () => {
+        this.setState({
+            setShow: true
+        })
+        // this.handleCompare();
+    }
+
+    handleCompare = () => {
+        console.log('hello', this.state.setShow)
+        return (
+            <Modal
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={this.state.setShow}
+                onHide={() => this.setState({ setShow: false })}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        Modal heading
+                        </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h4>Centered Modal</h4>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.
+                        </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={() => this.setState({ setShow: false })}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        )
+    }
+
     displayQuestions = (questions = this.state.questions, currentQuestion, nextQuestion, previousQuestion) => {
-        let { currentQuestionIndex } = this.state;   
+        let { currentQuestionIndex } = this.state;
         if (!isEmpty(this.state.questions)) {
             questions = this.state.questions;
             currentQuestion = questions[currentQuestionIndex];
@@ -68,7 +121,7 @@ class Play extends Component {
                 this.showOptions();
                 this.handleDisableButton();
             });
-        }     
+        }
     };
 
     handleOptionClick = (e) => {
@@ -131,7 +184,7 @@ class Play extends Component {
             default:
                 break;
         }
-        
+
     };
 
     playButtonSound = () => {
@@ -149,7 +202,7 @@ class Play extends Component {
             correctAnswers: prevState.correctAnswers + 1,
             currentQuestionIndex: prevState.currentQuestionIndex + 1,
             numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1
-        }), () => {            
+        }), () => {
             if (this.state.nextQuestion === undefined) {
                 this.endGame();
             } else {
@@ -237,14 +290,14 @@ class Play extends Component {
                 const randomNumber = Math.round(Math.random() * 3);
                 if (randomNumber !== indexOfAnswer) {
                     if (randomNumbers.length < 2 && !randomNumbers.includes(randomNumber) && !randomNumbers.includes(indexOfAnswer)) {
-                            randomNumbers.push(randomNumber);
-                            count ++;
+                        randomNumbers.push(randomNumber);
+                        count++;
                     } else {
                         while (true) {
                             const newRandomNumber = Math.round(Math.random() * 3);
                             if (!randomNumbers.includes(newRandomNumber) && newRandomNumber !== indexOfAnswer) {
                                 randomNumbers.push(newRandomNumber);
-                                count ++;
+                                count++;
                                 break;
                             }
                         }
@@ -265,7 +318,7 @@ class Play extends Component {
     }
 
     startTimer = () => {
-        const countDownTime = Date.now() + 180000;
+        const countDownTime = Date.now() + 600000;
         this.interval = setInterval(() => {
             const now = new Date();
             const distance = countDownTime - now;
@@ -334,14 +387,14 @@ class Play extends Component {
         }, 1000);
     }
 
-    render () {
-        const { 
-            currentQuestion, 
-            currentQuestionIndex, 
-            fiftyFifty, 
-            hints, 
+    render() {
+        const {
+            currentQuestion,
+            currentQuestionIndex,
+            fiftyFifty,
+            hints,
             numberOfQuestions,
-            time 
+            time
         } = this.state;
 
         return (
@@ -352,57 +405,127 @@ class Play extends Component {
                     <audio ref={this.wrongSound} src={wrongNotification}></audio>
                     <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
-                <div className="questions bg-dark">
-                    <h2 className="title-web">Radiogamia</h2>
-                    <div className="lifeline-container">
-                        <p>
-                            <span onClick={this.handleFiftyFifty} className="mdi mdi-set-center mdi-24px lifeline-icon">
-                                <span className="lifeline">{fiftyFifty}</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span onClick={this.handleHints} className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon">
-                                <span className="lifeline">{hints}</span>
-                            </span>
-                        </p>
-                    </div>
-                    <div className="timer-container text">
-                        <p>
-                            <span className="left text" style={{ float: 'left'}}>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
-                            <span className={classnames('right valid', {
-                                'warning': time.distance <= 120000,
-                                'invalid': time.distance < 30000
-                            })}>
-                                {time.minutes}:{time.seconds}
-                            <span  className="mdi mdi-clock-outline mdi-24px"></span></span>
-                        </p>
-                    </div>
-                    <h5 className="text">{currentQuestion.question}</h5>
-                    <div className="options-container">
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
-                    </div>
-                    <div className="options-container">
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
-                    </div>
+                <Container fluid style={{ height: '100vh', backgroundColor: 'black' }}>
+                    <div className="questions" style={{ height: '100vh', backgroundColor: 'black' }}>
+                        <h2 className="title-web">Radiogamia</h2>
+                        <div className="lifeline-container">
+                            <p>
+                                <span onClick={this.handleFiftyFifty} className="mdi mdi-set-center mdi-36px lifeline-icon">
+                                    <span className="lifeline">{fiftyFifty}</span>
+                                </span>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span className="mdi mdi-36px lifeline-icon mdi-magnify" onClick={this.handleZoom} title="Zoom">
+                                    {/* &nbsp;<span onClick={this.handleZoom} className="lifeline">Zoom</span> */}
+                                </span>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span onClick={this.handleSetShow} className="mdi mdi-36px lifeline-icon mdi-compare" title="Compare">
+                                    {/* <span onClick={this.handleSetShow} className="lifeline">Compare</span> */}
+                                </span>
+                            </p>
+                            <p>
+                                <span onClick={this.handleHints} className="mdi mdi-lightbulb-on-outline mdi-36px lifeline-icon">
+                                    <span className="lifeline">{hints}</span>
+                                </span>
+                            </p>
+                        </div>
+                        <div className="timer-container text">
+                            <p>
+                                <span className="left text" style={{ float: 'left'}}>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
+                                <span className={classnames('right valid', {
+                                    'warning': time.distance <= 120000,
+                                    'invalid': time.distance < 30000
+                                })}>
+                                    {time.minutes}:{time.seconds}
+                                    <span className="mdi mdi-clock-outline mdi-24px" style={{marginTop: '-9px'}}></span></span>
+                            </p>
+                        </div>
+                        <br /><br />
+                        <h5 className="text">{currentQuestion.question}</h5>
+                        <Row>
+                            <Col xs={6} className={this.state.zoom ? 'zoom' : 'boom'}>
+                                <Image src={currentQuestion.image} width="100%" className="mt-2" />
 
-                    <div className="button-container">
-                        <button 
-                            className={classnames('', {'disable': this.state.previousButtonDisabled})}
-                            id="previous-button" 
-                            onClick={this.handleButtonClick}>
-                            Previous
+                            </Col>
+                            <Col xs={5} className="offset-1">
+                                <div className="options-container">
+                                    <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
+                                    <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
+                                </div>
+                                <div className="options-container">
+                                    <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
+                                    <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
+                                </div>
+                            </Col>
+                        </Row>
+                        <div className="button-container">
+                            <button
+                                className={classnames('', { 'disable': this.state.previousButtonDisabled })}
+                                id="previous-button"
+                                onClick={this.handleButtonClick}>
+                                Previous
                         </button>
-                        <button 
-                            className={classnames('', {'disable': this.state.nextButtonDisabled})}
-                            id="next-button" 
-                            onClick={this.handleButtonClick}>
+                            <button
+                                className={classnames('', { 'disable': this.state.nextButtonDisabled })}
+                                id="next-button"
+                                onClick={this.handleButtonClick}>
                                 Next
                             </button>
-                        <button id="quit-button" onClick={this.handleButtonClick}>Quit</button>
+                            <button id="quit-button" onClick={this.handleButtonClick}>Quit</button>
+                        </div>
                     </div>
-                </div>
+                    <>
+                        {this.state.setShow ? (
+                            <Modal
+                                size="xl"
+                                aria-labelledby="contained-modal-title-vcenter"
+                                centered
+                                show={this.state.setShow}
+                                onHide={() => this.setState({ setShow: false })}
+                                style={{ backgroundColor: 'transparent', maxHeight: '100%' }}
+                            >
+                                <Modal.Header closeButton>
+                                    <Modal.Title id="contained-modal-title-vcenter" className="modalHead">
+                                        Compare
+                                </Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <Row>
+                                        <Col xs={6} style={{borderRight: '1px solid', borderColor:'rgba(233, 222, 222, 0.699)',textAlign: 'center'}}>
+                                            <Row>
+                                                <Col xs={12}>
+                                                    <span className="modalSubHead">Normal Image</span>
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Col xs={12}>
+                                                    <Image src={currentQuestion.image} width='100%' />
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                        <Col xs={6} style={{textAlign: 'center'}}>
+                                            <Row>
+                                                <Col xs={12}>
+                                                    <span className="modalSubHead">Abnormal Image</span>
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Col xs={12}>
+                                                    <Image src={currentQuestion.image} width='100%' />
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button onClick={() => this.setState({ setShow: false })}>Close</Button>
+                                </Modal.Footer>
+                            </Modal>
+                        ) : (
+                                <span></span>
+                            )
+                        }
+                    </>
+                </Container>
             </Fragment>
         );
     }

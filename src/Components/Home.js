@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Home = () => (
     <Fragment>
         <Helmet><title>Home - Quiz App</title></Helmet>
-        <div id="home" className="bg-dark">
+        <div id="home">
             <section>
                 <div style={{ textAlign: 'center' }} className="mt-5">
                 <h1 className="cube">Radiogamia</h1>
@@ -18,7 +18,7 @@ const Home = () => (
                 </div>
                 <div className="play-button-container">
                     <ul>
-                        <li><Link className="play-button mx-auto" to="/play/instructions">Skip</Link></li>
+                        <li><Link className="play-button mx-auto" to="/play/instructions">Skip For Now</Link></li>
                     </ul>
                 </div>
                 {/* <div className="row mar-contact">

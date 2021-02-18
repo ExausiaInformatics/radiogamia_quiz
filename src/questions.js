@@ -1,4 +1,11 @@
-[
+import First from './assets/img/answer.png';
+import Second from './assets/img/fiftyFifty.PNG';
+import Third from './assets/img/hints.PNG';
+import Fourth from './assets/img/options.PNG';
+
+
+
+export const questions = [
     {
         "question": "What temperature does water boil at?",
         "optionA": "50 degrees Celcius",
@@ -6,7 +13,7 @@
         "optionC": "100 degrees Celcius",
         "optionD": "150 degrees Celcius",
         "answer": "100 degrees Celcius",
-        "image": "1"
+        "image": First
     },
 
     {
@@ -16,7 +23,7 @@
         "optionC": "Ngozi Chimamanda Adichie",
         "optionD": "Dan Brown",
         "answer": "William Shakespeare",
-        "image": "2"
+        "image": Second
     },
 
     {
@@ -26,7 +33,7 @@
         "optionC": "A pair of shoes",
         "optionD": "Alarm Clock",
         "answer": "Alarm Clock",
-        "image": "3"
+        "image": Third
     },
 
     {
@@ -36,7 +43,7 @@
         "optionC": "Goat",
         "optionD": "Lion",
         "answer": "Elephant",
-        "image": "4"
+        "image": Fourth
     },
 
     {
@@ -46,7 +53,7 @@
         "optionC": "Sherlock Holmes",
         "optionD": "Samuel L. Jackson",
         "answer": "Sherlock Holmes",
-        "image": "5"
+        "image": First
     },
 
     {
@@ -56,7 +63,7 @@
         "optionC": "Green and White",
         "optionD": "Black and White",
         "answer": "Black and White",
-        "image": "6"
+        "image": Second
     },
 
     {
@@ -66,7 +73,7 @@
         "optionC": "The Legs",
         "optionD": "The Hands",
         "answer": "The Ear",
-        "image": "7"
+        "image": Third
     },
 
     {
@@ -76,7 +83,7 @@
         "optionC": "10,000",
         "optionD": "1,000,000",
         "answer": "100",
-        "image": "8"
+        "image": Fourth
     },
 
     {
@@ -86,7 +93,7 @@
         "optionC": "Street Racing",
         "optionD": "Arm Wrestling",
         "answer": "Horse racing",
-        "image": "9"
+        "image": First
     },
 
     {
@@ -96,7 +103,7 @@
         "optionC": "Leonardo Da Vinci",
         "optionD": "Albert Einstein",
         "answer": "Leonardo Da Vinci",
-        "image": "10"
+        "image": Second
     },
 
     {
@@ -106,7 +113,7 @@
         "optionC": "The Bible",
         "optionD": "The Chemistry text Book",
         "answer": "The Koran",
-        "image": "11"
+        "image": Third
     },
 
     {
@@ -116,7 +123,7 @@
         "optionC": "Abuja",
         "optionD": "Syndey",
         "answer": "Addis Ababa",
-        "image": "12"
+        "image": Fourth
     },
 
     {
@@ -126,7 +133,7 @@
         "optionC": "32",
         "optionD": "256",
         "answer": "64",
-        "image": "13"
+        "image": First
     },
 
     {
@@ -136,7 +143,7 @@
         "optionC": "Wole Soyinka",
         "optionD": "Thomas Edison",
         "answer": "Thomas Edison",
-        "image": "14"
+        "image": Second
     },
 
     {
@@ -146,6 +153,6 @@
         "optionC": "In the beginning",
         "optionD": "At that time",
         "answer": "In the beginning",
-        "image": "15"
+        "image": Third
     }
 ]

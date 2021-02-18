@@ -79,10 +79,10 @@ class QuizSummary extends Component {
                     <section>
                         <ul>
                             <li>
-                                <Link to ="/play/quiz">Play Again</Link>
+                                <Link to ="/play/quiz" style={{textDecoration:'none'}}>Play Again</Link>
                             </li>
                             <li>
-                                <Link to ="/radiogamia_quiz">Back to Home</Link>
+                                <Link to ="/radiogamia_quiz" style={{textDecoration:'none'}}>Back to Home</Link>
                             </li>
                         </ul>
                     </section>
@@ -94,10 +94,10 @@ class QuizSummary extends Component {
                     <h1 className="no-stats">No Statistics Available</h1>
                     <ul>
                         <li>
-                            <Link to ="/play/quiz">Take a Quiz</Link>
+                            <Link to ="/play/quiz" style={{textDecoration:'none'}}>Take a Quiz</Link>
                         </li>
                         <li>
-                            <Link to ="/">Back to Home</Link>
+                            <Link to ="/radiogamia_quiz" style={{textDecoration:'none'}}>Back to Home</Link>
                         </li>
                     </ul>
                 </section>
@@ -106,7 +106,7 @@ class QuizSummary extends Component {
         return (
             <Fragment>
                 <Helmet><title>Quiz App - Summary</title></Helmet>
-                <div className="quiz-summary" style={{background:'black'}}>
+                <div className="quiz-summary" style={{background:'black',height:'100vh'}}>
                     {stats}
                 </div>
             </Fragment>
