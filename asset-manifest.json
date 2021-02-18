@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/radiogamia_quiz/static/css/main.66292d94.chunk.css",
+    "main.js": "/radiogamia_quiz/static/js/main.5ad27e46.chunk.js",
+    "main.js.map": "/radiogamia_quiz/static/js/main.5ad27e46.chunk.js.map",
+    "runtime-main.js": "/radiogamia_quiz/static/js/runtime-main.a31694c8.js",
+    "runtime-main.js.map": "/radiogamia_quiz/static/js/runtime-main.a31694c8.js.map",
+    "static/css/2.7f0febee.chunk.css": "/radiogamia_quiz/static/css/2.7f0febee.chunk.css",
+    "static/js/2.36651f9f.chunk.js": "/radiogamia_quiz/static/js/2.36651f9f.chunk.js",
+    "static/js/2.36651f9f.chunk.js.map": "/radiogamia_quiz/static/js/2.36651f9f.chunk.js.map",
+    "index.html": "/radiogamia_quiz/index.html",
+    "static/css/2.7f0febee.chunk.css.map": "/radiogamia_quiz/static/css/2.7f0febee.chunk.css.map",
+    "static/css/main.66292d94.chunk.css.map": "/radiogamia_quiz/static/css/main.66292d94.chunk.css.map",
+    "static/js/2.36651f9f.chunk.js.LICENSE.txt": "/radiogamia_quiz/static/js/2.36651f9f.chunk.js.LICENSE.txt",
+    "static/media/Picture1.020d08a3.jpg": "/radiogamia_quiz/static/media/Picture1.020d08a3.jpg",
+    "static/media/Picture1a.7f540311.jpg": "/radiogamia_quiz/static/media/Picture1a.7f540311.jpg",
+    "static/media/Picture2.809ce749.jpg": "/radiogamia_quiz/static/media/Picture2.809ce749.jpg",
+    "static/media/Picture3.f521ea0b.jpg": "/radiogamia_quiz/static/media/Picture3.f521ea0b.jpg",
+    "static/media/Picture3a.3fc8700b.jpg": "/radiogamia_quiz/static/media/Picture3a.3fc8700b.jpg",
+    "static/media/Picture4.61f66758.jpg": "/radiogamia_quiz/static/media/Picture4.61f66758.jpg",
+    "static/media/Picture4a.7ecdab32.jpg": "/radiogamia_quiz/static/media/Picture4a.7ecdab32.jpg",
+    "static/media/Picture5.ce956437.jpg": "/radiogamia_quiz/static/media/Picture5.ce956437.jpg",
+    "static/media/Picture5a.0e078e02.jpg": "/radiogamia_quiz/static/media/Picture5a.0e078e02.jpg",
+    "static/media/answers.7d6dbe7a.png": "/radiogamia_quiz/static/media/answers.7d6dbe7a.png",
+    "static/media/button-sound.8277ab8c.mp3": "/radiogamia_quiz/static/media/button-sound.8277ab8c.mp3",
+    "static/media/compare.617f7b5a.png": "/radiogamia_quiz/static/media/compare.617f7b5a.png",
+    "static/media/correct-answer.e1cf8406.mp3": "/radiogamia_quiz/static/media/correct-answer.e1cf8406.mp3",
+    "static/media/fiftyFifty.d7624c5d.PNG": "/radiogamia_quiz/static/media/fiftyFifty.d7624c5d.PNG",
+    "static/media/hints.983ebab8.PNG": "/radiogamia_quiz/static/media/hints.983ebab8.PNG",
+    "static/media/materialdesignicons.min.css": "/radiogamia_quiz/static/media/materialdesignicons-webfont.da9606b6.woff",
+    "static/media/options.0d7b89c8.PNG": "/radiogamia_quiz/static/media/options.0d7b89c8.PNG",
+    "static/media/wrong-answer.e08b616b.mp3": "/radiogamia_quiz/static/media/wrong-answer.e08b616b.mp3",
+    "static/media/zoom.bcded161.png": "/radiogamia_quiz/static/media/zoom.bcded161.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a31694c8.js",
+    "static/css/2.7f0febee.chunk.css",
+    "static/js/2.36651f9f.chunk.js",
+    "static/css/main.66292d94.chunk.css",
+    "static/js/main.5ad27e46.chunk.js"
+  ]
+}
